@@ -1,0 +1,2026 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jornada por Público · Comunidade Endeavor 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --near-black: #01000F;
+  --white: #FFFFFF;
+  --teal: #09E1CD;
+  --light-teal: #DCFBFA;
+  --teal-tint: #ECFCFB;
+  --deep-navy: #0D1DAF;
+  --light-navy: #E3E6FF;
+  --navy-tint: #EFF1FF;
+  --orange: #D33504;
+  --light-orange: #FDE7DF;
+  --orange-tint: #FFF3EF;
+  --deep-purple: #5A0860;
+  --light-purple: #F1E3F5;
+  --grey-text: #55555F;
+  --grey-muted: #8B8B95;
+  --grey-line: #E5E5EA;
+  --grey-bg: #F7F7F9;
+  --shadow-soft: 0 1px 2px rgba(1,0,15,.04), 0 8px 24px rgba(1,0,15,.06);
+  --shadow-hover: 0 2px 4px rgba(1,0,15,.06), 0 14px 36px rgba(1,0,15,.10);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  color: var(--near-black);
+  background: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--deep-navy); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--deep-navy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============= LAYOUT ============= */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 28px 80px;
+}
+
+/* ============= HEADER ============= */
+header.page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--deep-navy);
+  margin-bottom: 12px;
+}
+h1.title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+  letter-spacing: -.005em;
+  color: var(--near-black);
+  max-width: 820px;
+}
+.subtitle {
+  font-size: 15px;
+  color: var(--grey-text);
+  max-width: 820px;
+  margin: 0;
+}
+.back-to-deck {
+  font-size: 12px;
+  color: var(--deep-navy);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--light-navy);
+  border-radius: 100px;
+  background: var(--navy-tint);
+  white-space: nowrap;
+  transition: background .15s;
+}
+.back-to-deck:hover { background: var(--light-navy); }
+
+/* ============= LAYER LEGEND ============= */
+.layer-legend {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.layer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 8px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.layer-pill .swatch {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.layer-pill.ic { background: var(--teal-tint); color: var(--near-black); border-color: var(--light-teal); }
+.layer-pill.ic .swatch { background: var(--teal); }
+.layer-pill.nb { background: var(--navy-tint); color: var(--deep-navy); border-color: var(--light-navy); }
+.layer-pill.nb .swatch { background: var(--deep-navy); }
+.layer-pill.fl { background: var(--orange-tint); color: var(--orange); border-color: var(--light-orange); }
+.layer-pill.fl .swatch { background: var(--orange); }
+
+/* ============= CARDS GRID ============= */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+@media (max-width: 1100px) {
+  .cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--grey-line);
+  border-radius: 14px;
+  padding: 16px 16px 18px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow-soft);
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.card.is-active { border-color: var(--deep-navy); box-shadow: 0 0 0 2px var(--deep-navy); }
+
+.card .top-bar {
+  height: 4px;
+  border-radius: 100px;
+  background: var(--grey-line);
+  margin: -16px -16px 6px;
+  border-radius: 14px 14px 0 0;
+}
+.card[data-tint="teal"] .top-bar { background: var(--teal); }
+.card[data-tint="navy"] .top-bar { background: var(--deep-navy); }
+.card[data-tint="orange"] .top-bar { background: var(--orange); }
+
+.card .name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.05;
+  letter-spacing: -.005em;
+}
+.card .count {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--deep-navy);
+}
+.card .quote {
+  font-size: 12.5px;
+  color: var(--grey-text);
+  margin: 4px 0 8px;
+}
+.card .intensity-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px dashed var(--grey-line);
+}
+.card .intensity-row .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--grey-text);
+}
+.card .intensity-row .row .lbl { font-weight: 500; }
+.card .dots { display: inline-flex; gap: 3px; }
+.card .dot { width: 7px; height: 7px; border-radius: 50%; }
+.card .dot.ic { background: var(--teal); }
+.card .dot.nb { background: var(--deep-navy); }
+.card .dot.fl { background: var(--orange); }
+.card .dot.empty { background: transparent; border: 1px solid var(--grey-muted); }
+.card .cta {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--deep-navy);
+  letter-spacing: .04em;
+}
+
+/* ============= DETAIL PANEL ============= */
+.detail {
+  background: var(--white);
+  border: 1px solid var(--grey-line);
+  border-radius: 18px;
+  padding: 28px 28px 24px;
+  box-shadow: var(--shadow-soft);
+  display: none;
+  margin-bottom: 28px;
+}
+.detail.is-open { display: block; }
+
+.detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.detail-head .ttl {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -.005em;
+  margin: 0;
+}
+.detail-head .meta {
+  font-size: 13px;
+  color: var(--deep-navy);
+  margin-top: 4px;
+}
+.detail-head .quote-large {
+  font-size: 15px;
+  color: var(--grey-text);
+  margin-top: 8px;
+  max-width: 720px;
+}
+.detail-close {
+  border: 1px solid var(--grey-line);
+  background: var(--white);
+  border-radius: 100px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--grey-text);
+}
+.detail-close:hover { background: var(--grey-bg); }
+
+/* Calendar (real 2026 events) */
+.cal-section { margin-bottom: 22px; }
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--deep-navy);
+  margin-bottom: 10px;
+}
+.cal-block {
+  background: var(--grey-bg);
+  border-radius: 12px;
+  padding: 14px 14px 14px;
+  margin-top: 8px;
+}
+.cal-block + .cal-block { margin-top: 10px; }
+.cal-block-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.cal-block-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .06em;
+  color: var(--near-black);
+  text-transform: uppercase;
+}
+.cal-block-meta {
+  font-size: 10.5px;
+  color: var(--grey-muted);
+  font-weight: 500;
+}
+.cal-spans {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.cal-span {
+  height: 22px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 500;
+  gap: 8px;
+}
+.cal-span .span-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.cal-span .span-range {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  opacity: .75;
+}
+.cal-span.ic { background: var(--light-teal); color: var(--near-black); }
+.cal-span.ic .span-dot { background: var(--teal); }
+.cal-span.nb { background: var(--light-navy); color: var(--deep-navy); }
+.cal-span.nb .span-dot { background: var(--deep-navy); }
+.cal-span.fl { background: var(--light-orange); color: var(--orange); }
+.cal-span.fl .span-dot { background: var(--orange); }
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+@media (max-width: 760px) {
+  .cal-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 460px) {
+  .cal-grid { grid-template-columns: 1fr; }
+}
+.cal-month {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 8px 7px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--grey-line);
+}
+.cal-month .month-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: var(--grey-text);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+.cal-event {
+  font-size: 10.5px;
+  line-height: 1.25;
+  padding: 5px 7px;
+  border-radius: 5px;
+  border-left: 3px solid var(--grey-line);
+  color: var(--near-black);
+  font-weight: 500;
+}
+.cal-event.ic { border-left-color: var(--teal); background: var(--teal-tint); }
+.cal-event.nb { border-left-color: var(--deep-navy); background: var(--navy-tint); }
+.cal-event.fl { border-left-color: var(--orange); background: var(--orange-tint); }
+.cal-empty-month {
+  font-size: 10px;
+  color: var(--grey-muted);
+  font-style: italic;
+  padding: 4px 4px 0;
+}
+.cal-block-empty {
+  font-size: 12px;
+  color: var(--grey-muted);
+  font-style: italic;
+  padding: 8px 4px;
+}
+
+/* Inventory blocks */
+.inventory {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+@media (max-width: 760px) { .inventory { grid-template-columns: 1fr; } }
+
+.inv-card {
+  border: 1px solid var(--grey-line);
+  border-radius: 12px;
+  padding: 14px 16px 16px;
+  background: var(--white);
+}
+.inv-card[data-layer="ic"] { background: var(--teal-tint); border-color: var(--light-teal); }
+.inv-card[data-layer="nb"] { background: var(--navy-tint); border-color: var(--light-navy); }
+.inv-card[data-layer="fl"] { background: var(--orange-tint); border-color: var(--light-orange); }
+
+.inv-card .layer-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  margin-bottom: 8px;
+}
+.inv-card[data-layer="ic"] .layer-label { color: var(--near-black); }
+.inv-card[data-layer="nb"] .layer-label { color: var(--deep-navy); }
+.inv-card[data-layer="fl"] .layer-label { color: var(--orange); }
+.inv-card .swatch {
+  width: 9px; height: 9px; border-radius: 50%;
+}
+.inv-card[data-layer="ic"] .swatch { background: var(--teal); }
+.inv-card[data-layer="nb"] .swatch { background: var(--deep-navy); }
+.inv-card[data-layer="fl"] .swatch { background: var(--orange); }
+
+.inv-card .intensity {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+.inv-card .intensity .d {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.inv-card[data-layer="ic"] .intensity .d.on { background: var(--teal); }
+.inv-card[data-layer="nb"] .intensity .d.on { background: var(--deep-navy); }
+.inv-card[data-layer="fl"] .intensity .d.on { background: var(--orange); }
+.inv-card .intensity .d.off { background: rgba(1,0,15,.10); }
+.inv-card .intensity .d.empty { background: transparent; border: 1px solid var(--grey-muted); }
+
+.inv-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: var(--near-black);
+}
+.inv-card li {
+  padding: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.inv-card li .role {
+  color: var(--grey-text);
+  font-size: 11.5px;
+  font-style: italic;
+}
+.inv-card .summary {
+  font-size: 12px;
+  color: var(--grey-text);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Value blocks */
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 760px) { .value-grid { grid-template-columns: 1fr; } }
+
+.value-block {
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--grey-line);
+}
+.value-block.received { background: var(--teal-tint); border-color: var(--light-teal); }
+.value-block.given    { background: var(--light-purple); border-color: var(--light-purple); }
+.value-block .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  margin-bottom: 8px;
+}
+.value-block.received .label { color: var(--near-black); }
+.value-block.given    .label { color: var(--deep-purple); }
+.value-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13.5px;
+}
+.value-block li {
+  padding: 6px 0 6px 18px;
+  position: relative;
+}
+.value-block li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 13px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.value-block.received li::before { background: var(--teal); }
+.value-block.given    li::before { background: var(--deep-purple); }
+
+/* Connections block */
+.connections {
+  background: var(--light-purple);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.connections .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--deep-purple);
+  margin-bottom: 8px;
+}
+.connections ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: var(--near-black);
+}
+.connections li {
+  padding: 5px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.connections li .arrow {
+  font-weight: 700;
+  color: var(--deep-purple);
+  flex-shrink: 0;
+}
+
+/* ============= CAPACITY FOOTER ============= */
+.capacity-footer {
+  background: var(--near-black);
+  color: var(--white);
+  border-radius: 18px;
+  padding: 24px 28px 22px;
+  margin-top: 32px;
+}
+.capacity-footer .cap-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.capacity-footer h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+.capacity-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) auto auto;
+  gap: 14px;
+  align-items: end;
+}
+@media (max-width: 980px) {
+  .capacity-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .capacity-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.cap-cell .cap-num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--teal);
+}
+.cap-cell .cap-num.warn { color: var(--orange); }
+.cap-cell .cap-lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,.7);
+  margin-top: 4px;
+  line-height: 1.3;
+}
+.cap-cell .cap-status {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin-top: 4px;
+  display: inline-block;
+}
+.cap-cell .cap-status.ok { color: var(--teal); }
+.cap-cell .cap-status.tight { color: #FFCF53; }
+.cap-cell .cap-status.gap { color: var(--orange); }
+
+.cap-divider {
+  width: 1px;
+  height: 60%;
+  background: rgba(255,255,255,.18);
+  align-self: end;
+  margin-bottom: 6px;
+}
+.cap-summary {
+  text-align: right;
+  border-left: 1px solid rgba(255,255,255,.18);
+  padding-left: 16px;
+}
+.cap-summary .cap-num { color: var(--white); font-size: 22px; }
+.cap-summary .cap-lbl { color: rgba(255,255,255,.85); }
+
+.cap-footnote {
+  font-size: 11px;
+  color: rgba(255,255,255,.65);
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-style: italic;
+}
+
+/* ============= GLOSSARY (TIPOS DE EVENTO) ============= */
+.glossary-section {
+  margin: 36px 0 28px;
+}
+.glossary-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.glossary-head h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -.005em;
+  margin: 0;
+}
+.glossary-head .sub {
+  font-size: 12.5px;
+  color: var(--grey-text);
+  max-width: 540px;
+  margin-top: 2px;
+}
+.glossary-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.gloss-tab {
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  cursor: pointer;
+  border: 1px solid var(--grey-line);
+  background: var(--white);
+  color: var(--grey-text);
+  font-family: inherit;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.gloss-tab:hover { background: var(--grey-bg); }
+.gloss-tab.is-active.ic { background: var(--teal-tint); border-color: var(--light-teal); color: var(--near-black); }
+.gloss-tab.is-active.nb { background: var(--navy-tint); border-color: var(--light-navy); color: var(--deep-navy); }
+.gloss-tab.is-active.fl { background: var(--orange-tint); border-color: var(--light-orange); color: var(--orange); }
+.gloss-tab.is-active.all { background: var(--near-black); border-color: var(--near-black); color: var(--white); }
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media (max-width: 760px) { .glossary-grid { grid-template-columns: 1fr; } }
+.gloss-item {
+  background: var(--white);
+  border: 1px solid var(--grey-line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  transition: border-color .15s, box-shadow .15s;
+  position: relative;
+  overflow: hidden;
+}
+.gloss-item:hover { border-color: var(--grey-muted); box-shadow: var(--shadow-soft); }
+.gloss-item .gloss-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--grey-line);
+}
+.gloss-item[data-layer="ic"] .gloss-bar { background: var(--teal); }
+.gloss-item[data-layer="nb"] .gloss-bar { background: var(--deep-navy); }
+.gloss-item[data-layer="fl"] .gloss-bar { background: var(--orange); }
+.gloss-item .gloss-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.gloss-item .gloss-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.1;
+  letter-spacing: -.005em;
+  padding-left: 8px;
+}
+.gloss-item .gloss-meta {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--grey-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.gloss-item .gloss-summary {
+  font-size: 12.5px;
+  color: var(--grey-text);
+  margin-top: 6px;
+  padding-left: 8px;
+  line-height: 1.45;
+}
+.gloss-item .gloss-toggle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--deep-navy);
+  margin-top: 8px;
+  padding-left: 8px;
+}
+.gloss-item.is-open .gloss-toggle::after { content: " ↑"; }
+.gloss-item:not(.is-open) .gloss-toggle::after { content: " ↓"; }
+.gloss-detail {
+  display: none;
+  padding: 12px 8px 4px;
+  border-top: 1px dashed var(--grey-line);
+  margin-top: 12px;
+}
+.gloss-item.is-open .gloss-detail { display: block; }
+.gloss-detail p {
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0 0 8px;
+  color: var(--near-black);
+}
+.gloss-detail .gloss-stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--grey-line);
+}
+.gloss-detail .gloss-stat {
+  font-size: 11px;
+}
+.gloss-detail .gloss-stat .lbl {
+  display: block;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--grey-muted);
+  text-transform: uppercase;
+  font-size: 9.5px;
+  margin-bottom: 2px;
+}
+.gloss-detail .gloss-stat .val {
+  color: var(--near-black);
+  font-weight: 500;
+}
+.gloss-detail .gloss-examples {
+  margin-top: 8px;
+  font-size: 11.5px;
+  color: var(--grey-text);
+  font-style: italic;
+}
+
+/* ============= HEADER ACTIONS ============= */
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.header-cta {
+  font-size: 12px;
+  color: var(--white);
+  background: var(--near-black);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.header-cta:hover { background: #1A1A28; }
+
+/* ============= CONSOLIDATED CALENDAR MODAL ============= */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 0, 15, .55);
+  z-index: 100;
+  overflow-y: auto;
+  padding: 24px 16px;
+}
+.modal-overlay.is-open { display: block; }
+.modal-card {
+  background: var(--white);
+  max-width: 1320px;
+  margin: 0 auto;
+  border-radius: 18px;
+  padding: 28px 28px 32px;
+  box-shadow: 0 20px 60px rgba(1,0,15,.30);
+}
+.modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.modal-head h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -.005em;
+  margin: 0 0 4px;
+}
+.modal-head .sub {
+  font-size: 13px;
+  color: var(--grey-text);
+  max-width: 600px;
+  margin: 0;
+}
+.modal-close {
+  border: 1px solid var(--grey-line);
+  background: var(--white);
+  border-radius: 100px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--near-black);
+  font-family: inherit;
+}
+.modal-close:hover { background: var(--grey-bg); }
+
+.cons-filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--grey-line);
+}
+.cons-filter-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cons-filter-group .fg-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--grey-muted);
+  margin-right: 4px;
+}
+.cons-chip {
+  padding: 5px 11px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  cursor: pointer;
+  border: 1px solid var(--grey-line);
+  background: var(--white);
+  color: var(--grey-text);
+  font-family: inherit;
+  transition: background .12s, border-color .12s, color .12s;
+}
+.cons-chip:hover { background: var(--grey-bg); }
+.cons-chip.is-active { background: var(--near-black); color: var(--white); border-color: var(--near-black); }
+.cons-chip.is-active.ic { background: var(--teal-tint); color: var(--near-black); border-color: var(--teal); }
+.cons-chip.is-active.nb { background: var(--navy-tint); color: var(--deep-navy); border-color: var(--deep-navy); }
+.cons-chip.is-active.fl { background: var(--orange-tint); color: var(--orange); border-color: var(--orange); }
+
+.cons-block {
+  margin-bottom: 14px;
+}
+.cons-block-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.cons-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+@media (max-width: 980px) { .cons-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .cons-grid { grid-template-columns: repeat(2, 1fr); } }
+.cons-month {
+  background: var(--grey-bg);
+  border-radius: 8px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 100px;
+}
+.cons-month .month-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: var(--grey-text);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.cons-event {
+  background: var(--white);
+  border-radius: 6px;
+  padding: 7px 8px;
+  border-left: 3px solid var(--grey-line);
+  font-size: 11px;
+  line-height: 1.3;
+}
+.cons-event.ic { border-left-color: var(--teal); }
+.cons-event.nb { border-left-color: var(--deep-navy); }
+.cons-event.fl { border-left-color: var(--orange); }
+.cons-event .ev-name {
+  font-weight: 500;
+  color: var(--near-black);
+}
+.cons-event .ev-publics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 4px;
+}
+.cons-event .ev-pub {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 1px 6px;
+  border-radius: 100px;
+  background: var(--grey-bg);
+  color: var(--grey-text);
+  border: 1px solid var(--grey-line);
+}
+.cons-event.ic .ev-pub { background: var(--teal-tint); color: var(--near-black); border-color: var(--light-teal); }
+.cons-event.nb .ev-pub { background: var(--navy-tint); color: var(--deep-navy); border-color: var(--light-navy); }
+.cons-event.fl .ev-pub { background: var(--orange-tint); color: var(--orange); border-color: var(--light-orange); }
+.cons-event.is-span { font-style: italic; }
+.cons-event.is-span .ev-name::before { content: "↔ "; opacity: .6; font-style: normal; }
+.cons-empty-month { font-size: 10px; color: var(--grey-muted); font-style: italic; }
+.cons-block-empty {
+  font-size: 12px;
+  color: var(--grey-muted);
+  font-style: italic;
+  padding: 10px;
+  text-align: center;
+}
+
+/* ============= UTIL ============= */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="page">
+  <div>
+    <div class="eyebrow">JORNADA POR PÚBLICO  ·  COMUNIDADE ENDEAVOR  ·  2026</div>
+    <h1 class="title">Cinco trilhas, calibradas para o que cada público precisa receber e pode dar.</h1>
+    <p class="subtitle">Pilares 1 e 2 traduzidos em jornada anual por público. Clique em qualquer card para ver a anatomia completa: calendário, formatos, valor recebido, valor entregue e como cada público alimenta os outros.</p>
+  </div>
+  <div class="header-actions">
+    <button class="header-cta" id="open-consolidated" aria-label="Abrir calendário consolidado de 2026">VER CALENDÁRIO 2026 ↗</button>
+    <a class="back-to-deck" href="#voltar" onclick="window.history.back();return false;" aria-label="Voltar para o deck">← voltar para o deck</a>
+  </div>
+</header>
+
+<div class="layer-legend" aria-label="Camadas da comunidade">
+  <span class="layer-pill ic"><span class="swatch"></span> INNER CIRCLE · 8–30 pessoas · 146/ano</span>
+  <span class="layer-pill nb"><span class="swatch"></span> NETWORK BUILDER · 30–100 pessoas · 22/ano</span>
+  <span class="layer-pill fl"><span class="swatch"></span> FLAGSHIP · 250–1.500 pessoas · 4/ano</span>
+</div>
+
+<div class="cards-grid" id="cards-grid"></div>
+
+<div id="detail" class="detail" aria-live="polite"></div>
+
+<section class="glossary-section" aria-label="Tipos de evento">
+  <div class="glossary-head">
+    <div>
+      <h2>Tipos de Evento</h2>
+      <p class="sub">Os formatos que compõem a Comunidade. Clique em qualquer um para ver propósito, recorrência ideal, tamanho típico e exemplos no calendário.</p>
+    </div>
+  </div>
+  <div class="glossary-tabs" id="glossary-tabs" role="tablist">
+    <button class="gloss-tab is-active all" data-filter="all">TODOS</button>
+    <button class="gloss-tab ic" data-filter="ic">INNER CIRCLE</button>
+    <button class="gloss-tab nb" data-filter="nb">NETWORK BUILDER</button>
+    <button class="gloss-tab fl" data-filter="fl">FLAGSHIP</button>
+  </div>
+  <div class="glossary-grid" id="glossary-grid"></div>
+</section>
+
+<section class="capacity-footer" aria-label="Capacidade vs demanda">
+  <div class="cap-eyebrow">CAPACIDADE  ·  DEMANDA  ·  FOLGA</div>
+  <h2>806 membros × 6 toques significativos/ano = 4.836 interações necessárias. Os 172 momentos do portfólio entregam entre 5.500 e 8.500. Cabe, com um gargalo conhecido em mentores.</h2>
+  <div class="capacity-grid">
+    <div class="cap-cell">
+      <div class="cap-num">924</div>
+      <div class="cap-lbl">EE Ativo<br>154 × 6</div>
+      <div class="cap-status ok">FOLGA</div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-num">1.428</div>
+      <div class="cap-lbl">EE Alumni<br>238 × 6</div>
+      <div class="cap-status tight">NO LIMITE</div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-num warn">2.040</div>
+      <div class="cap-lbl">Mentor<br>340 × 6</div>
+      <div class="cap-status gap">GARGALO</div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-num">240</div>
+      <div class="cap-lbl">Embaixador<br>40 × 6</div>
+      <div class="cap-status ok">FOLGA</div>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-num">204</div>
+      <div class="cap-lbl">Candidate<br>34 × 6</div>
+      <div class="cap-status ok">FOLGA</div>
+    </div>
+    <div class="cap-divider"></div>
+    <div class="cap-cell cap-summary">
+      <div class="cap-num">4.836</div>
+      <div class="cap-lbl">DEMANDA TOTAL<br>vs. 5.500–8.500 instalados</div>
+    </div>
+  </div>
+  <div class="cap-footnote">
+    O gargalo de mentores justifica a campanha de captação como prioridade em 2026 (pilar 5: Buscar Expansão em Escala). Sem mais mentores, a qualidade do toque cai antes do volume aparecer.
+  </div>
+</section>
+
+</div>
+
+<div class="modal-overlay" id="cons-modal" role="dialog" aria-modal="true" aria-labelledby="cons-title">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <h2 id="cons-title">Calendário Consolidado 2026</h2>
+        <p class="sub">Todos os 172 momentos do portfólio anual em um único grid. Cada evento mostra os públicos que participam e a camada a que pertence. Filtre por camada ou público.</p>
+      </div>
+      <button class="modal-close" id="cons-close" aria-label="Fechar calendário consolidado">FECHAR ✕</button>
+    </div>
+
+    <div class="cons-filters">
+      <div class="cons-filter-group">
+        <span class="fg-label">CAMADA</span>
+        <button class="cons-chip is-active" data-layer-filter="all">Todas</button>
+        <button class="cons-chip" data-layer-filter="ic">Inner Circle</button>
+        <button class="cons-chip" data-layer-filter="nb">Network Builder</button>
+        <button class="cons-chip" data-layer-filter="fl">Flagship</button>
+      </div>
+      <div class="cons-filter-group">
+        <span class="fg-label">PÚBLICO</span>
+        <button class="cons-chip is-active" data-public-filter="all">Todos</button>
+        <button class="cons-chip" data-public-filter="ee-ativo">EE Ativo</button>
+        <button class="cons-chip" data-public-filter="ee-alumni">EE Alumni</button>
+        <button class="cons-chip" data-public-filter="mentor">Mentor</button>
+        <button class="cons-chip" data-public-filter="embaixador">Embaixador</button>
+        <button class="cons-chip" data-public-filter="candidate">EE Candidate</button>
+      </div>
+    </div>
+
+    <div id="cons-body"></div>
+  </div>
+</div>
+
+<script>
+// ============== DATA ==============
+// Mês: 1=Jan, 2=Fev, ..., 12=Dez. h1 = Mar–Jul (operacional 2026.1), h2 = Ago–Dez (2026.2).
+// layer: ic = Inner Circle, nb = Network Builder, fl = Flagship
+// spans: eventos de duração estendida (ex.: P2P Circles, Trilha AI, Conexões Individuais)
+
+const CAL_EMPREENDEDORES = {
+  h1: {
+    label: "2026.1 · Mar a Jul",
+    spans: [
+      { from: 3, to: 7, layer: "ic", name: "Peer to Peer Circles" },
+      { from: 4, to: 7, layer: "ic", name: "Trilha AI" },
+    ],
+    events: [
+      { m: 4, layer: "nb", name: "Masterclass PicPay" },
+      { m: 5, layer: "nb", name: "Masterclass Meta" },
+      { m: 6, layer: "nb", name: "Masterclass Enter" },
+    ],
+  },
+  h2: {
+    label: "2026.2 · Ago a Dez",
+    spans: [
+      { from: 8, to: 12, layer: "ic", name: "Peer to Peer Circles" },
+      { from: 8, to: 12, layer: "ic", name: "Trilha AI" },
+    ],
+    events: [
+      { m: 8, layer: "fl", name: "Day 1" },
+      { m: 8, layer: "nb", name: "Gathering Florianópolis" },
+      { m: 8, layer: "nb", name: "Masterclass Mercado Livre" },
+      { m: 9, layer: "fl", name: "SUP V Annual Gathering" },
+      { m: 9, layer: "fl", name: "EEE" },
+      { m: 9, layer: "nb", name: "Gathering Curitiba" },
+      { m: 10, layer: "nb", name: "Masterclass Pismo" },
+      { m: 11, layer: "nb", name: "Gathering Fortaleza" },
+      { m: 11, layer: "nb", name: "Missão China" },
+      { m: 11, layer: "fl", name: "EE Summit AI" },
+      { m: 11, layer: "nb", name: "Masterclass Crew AI" },
+      { m: 12, layer: "fl", name: "Endeavor Week" },
+      { m: 12, layer: "ic", name: "Jantar de Encerramento" },
+    ],
+  },
+};
+
+const CAL_MENTORES = {
+  h1: {
+    label: "2026.1 · Mar a Jul",
+    spans: [],
+    events: [
+      { m: 3, layer: "nb", name: "Missão Amazônia" },
+      { m: 3, layer: "nb", name: "Gathering Porto Alegre" },
+      { m: 4, layer: "nb", name: "Side BSV" },
+      { m: 4, layer: "nb", name: "Side LTF" },
+      { m: 4, layer: "nb", name: "Masterclass PicPay" },
+      { m: 4, layer: "nb", name: "Gathering Belo Horizonte" },
+      { m: 5, layer: "nb", name: "Side Brazil Tech Week NYC" },
+      { m: 5, layer: "nb", name: "Masterclass Meta" },
+      { m: 6, layer: "nb", name: "Masterclass Enter" },
+      { m: 6, layer: "nb", name: "Gathering Rio de Janeiro" },
+      { m: 7, layer: "ic", name: "Café da Manhã Mentores" },
+    ],
+  },
+  h2: {
+    label: "2026.2 · Ago a Dez",
+    spans: [],
+    events: [
+      { m: 8, layer: "fl", name: "Day 1" },
+      { m: 8, layer: "nb", name: "Gathering Florianópolis" },
+      { m: 8, layer: "nb", name: "Masterclass Mercado Livre" },
+      { m: 9, layer: "fl", name: "SUP V Annual Gathering" },
+      { m: 9, layer: "nb", name: "Gathering Curitiba" },
+      { m: 10, layer: "nb", name: "Masterclass Pismo" },
+      { m: 11, layer: "ic", name: "Café da Manhã Mentores" },
+      { m: 11, layer: "nb", name: "Missão China" },
+      { m: 11, layer: "nb", name: "Gathering Fortaleza" },
+      { m: 11, layer: "nb", name: "Masterclass Crew AI" },
+      { m: 12, layer: "fl", name: "Endeavor Week" },
+    ],
+  },
+};
+
+const CAL_EMBAIXADORES = {
+  h1: {
+    label: "2026.1 · Mar a Jul",
+    spans: [],
+    events: [
+      { m: 3, layer: "nb", name: "Missão Amazônia" },
+      { m: 3, layer: "nb", name: "Gathering Porto Alegre" },
+      { m: 4, layer: "nb", name: "Side BSV" },
+      { m: 4, layer: "nb", name: "Side LTF" },
+      { m: 4, layer: "nb", name: "Masterclass PicPay" },
+      { m: 4, layer: "nb", name: "Gathering Belo Horizonte" },
+      { m: 5, layer: "nb", name: "Side Brazil Tech Week NYC" },
+      { m: 5, layer: "ic", name: "Jantar Embaixadores" },
+      { m: 5, layer: "nb", name: "Masterclass Meta" },
+      { m: 6, layer: "nb", name: "Gathering Rio de Janeiro" },
+      { m: 6, layer: "nb", name: "Masterclass Enter" },
+      { m: 7, layer: "ic", name: "Jantar Embaixadores + EEs Outliers" },
+    ],
+  },
+  h2: {
+    label: "2026.2 · Ago a Dez",
+    spans: [],
+    events: [
+      { m: 8, layer: "fl", name: "Day 1" },
+      { m: 8, layer: "nb", name: "Gathering Florianópolis" },
+      { m: 8, layer: "nb", name: "Masterclass Mercado Livre" },
+      { m: 9, layer: "fl", name: "SUP V Annual Gathering" },
+      { m: 9, layer: "ic", name: "Jantar Embaixadores" },
+      { m: 9, layer: "nb", name: "Gathering Curitiba" },
+      { m: 10, layer: "nb", name: "Masterclass Pismo" },
+      { m: 11, layer: "nb", name: "Missão China" },
+      { m: 11, layer: "ic", name: "Jantar Embaixadores + EEs Outliers" },
+      { m: 11, layer: "nb", name: "Gathering Fortaleza" },
+      { m: 11, layer: "nb", name: "Masterclass Crew AI" },
+      { m: 12, layer: "fl", name: "Endeavor Week" },
+    ],
+  },
+};
+
+const CAL_SELECAO = {
+  h1: {
+    label: "2026.1 · Mar a Jul",
+    spans: [
+      { from: 3, to: 6, layer: "ic", name: "Conexões Individuais para Desafio Principal" },
+      { from: 4, to: 5, layer: "ic", name: "Peer to Peer Circles" },
+    ],
+    events: [
+      { m: 3, layer: "ic", name: "Convite e Kick-off" },
+      { m: 3, layer: "nb", name: "Gathering Porto Alegre" },
+      { m: 4, layer: "ic", name: "Checkpoint" },
+      { m: 4, layer: "nb", name: "Masterclass PicPay" },
+      { m: 4, layer: "nb", name: "Gathering Belo Horizonte" },
+      { m: 5, layer: "nb", name: "Sides Brazil Tech Week NYC" },
+      { m: 5, layer: "nb", name: "Masterclass Meta" },
+      { m: 5, layer: "nb", name: "Masterclass Enter" },
+      { m: 6, layer: "ic", name: "Continuação ou Fim do Ciclo" },
+      { m: 6, layer: "nb", name: "Gathering Rio de Janeiro" },
+    ],
+  },
+  h2: {
+    label: "2026.2 · Ago a Dez",
+    spans: [
+      { from: 8, to: 12, layer: "ic", name: "Peer to Peer Circles Ecosystem" },
+    ],
+    events: [
+      { m: 8, layer: "fl", name: "Day 1" },
+      { m: 8, layer: "ic", name: "SEE Gathering" },
+      { m: 8, layer: "nb", name: "Gathering Florianópolis" },
+      { m: 8, layer: "nb", name: "Masterclass Mercado Livre" },
+      { m: 9, layer: "fl", name: "SUP V Annual Gathering" },
+      { m: 9, layer: "nb", name: "Gathering Curitiba" },
+      { m: 10, layer: "ic", name: "ISP" },
+      { m: 10, layer: "nb", name: "Masterclass Pismo" },
+      { m: 11, layer: "nb", name: "Gathering Fortaleza" },
+      { m: 11, layer: "nb", name: "Masterclass Crew AI" },
+      { m: 12, layer: "ic", name: "ISP" },
+    ],
+  },
+};
+
+const PUBLICOS = [
+  {
+    id: "ee-ativo",
+    name: "EE Ativo",
+    count: 154,
+    rule: "trilha plena",
+    tint: "teal",
+    quote: "Apoio decisivo no scale-up: peer-learning, mentoria certa, repertório aplicado.",
+    intensity: { ic: 3, nb: 3, fl: 3 },
+    calendar: CAL_EMPREENDEDORES,
+    inventory: {
+      ic: { items: [
+        { name: "P2Ps recorrentes", role: "participante" },
+        { name: "Trilhas", role: "participante" },
+        { name: "Fireside Chats", role: "participante" },
+        { name: "Jantares por públicos", role: "participante" },
+      ], summary: "Cadência mensal completa. O peer-learning vive aqui." },
+      nb: { items: [
+        { name: "Masterclasses", role: "participante" },
+        { name: "Side-Events", role: "participante" },
+        { name: "Missões e Viagens", role: "participante" },
+        { name: "Gatherings", role: "participante" },
+      ], summary: "Onde casos viram repertório aplicável." },
+      fl: { items: [
+        { name: "Encontro Anual", role: "centro" },
+        { name: "Retreat de EEs", role: "centro" },
+        { name: "Scale-Up Summit", role: "participante" },
+        { name: "Day1", role: "participante" },
+      ], summary: "Todos os palcos. EE ativo é a coluna vertebral." },
+    },
+    received: [
+      "Pares que entendem o estágio sem precisar explicar.",
+      "Repertório aplicado a problemas que estão acontecendo agora.",
+      "Mentoria estruturada e acesso a quem já fez antes.",
+      "Visibilidade quando o resultado começa a aparecer.",
+    ],
+    given: [
+      "Casos vivos: o que está funcionando e o que não está.",
+      "Perguntas reais que destravam outros founders.",
+      "Networking ativo com pares próximos.",
+      "Sinal de mercado que ajuda a calibrar a curadoria.",
+    ],
+    connections: [
+      { arrow: "←", text: "Recebe Candidate aprovado e assume o papel de par." },
+      { arrow: "→", text: "Vira EE Alumni quando o ciclo termina, mantendo a trilha plena." },
+      { arrow: "↔", text: "Cruza com Mentor em masterclasses e fireside (mentor convidado)." },
+    ],
+  },
+  {
+    id: "ee-alumni",
+    name: "EE Alumni",
+    count: 238,
+    rule: "trilha plena",
+    tint: "teal",
+    quote: "Manter relevância e relacionamento; doar repertório acumulado de scale-up.",
+    intensity: { ic: 3, nb: 3, fl: 3 },
+    calendar: CAL_EMPREENDEDORES,
+    inventory: {
+      ic: { items: [
+        { name: "P2Ps recorrentes", role: "participante" },
+        { name: "Trilhas", role: "participante" },
+        { name: "Fireside Chats", role: "doador" },
+        { name: "Jantares de alumni", role: "anfitrião eventual" },
+      ], summary: "Mesma cadência do EE Ativo, com mais convites para doar." },
+      nb: { items: [
+        { name: "Masterclasses", role: "doador frequente" },
+        { name: "Side-Events", role: "participante" },
+        { name: "Missões", role: "anfitrião eventual" },
+        { name: "Gatherings", role: "participante" },
+      ], summary: "É aqui que alumni vira referência viva." },
+      fl: { items: [
+        { name: "Encontro Anual", role: "participante" },
+        { name: "Retreat de EEs", role: "participante" },
+        { name: "Day1", role: "centro do palco" },
+      ], summary: "Day1 existe para alumni: é o palco que celebra o que vieram a se tornar." },
+    },
+    received: [
+      "Vínculo continuado com a rede que viveu o scale-up junto.",
+      "Plataforma para reciclar repertório e atualizar visão.",
+      "Reconhecimento público em Day1 e momentos de palco.",
+      "Acesso a oportunidades cross-públicos: capital, talento, parcerias.",
+    ],
+    given: [
+      "Repertório acumulado de scale-up para EEs ativos.",
+      "Mentoria informal entre pares.",
+      "Capital relacional: indicações, intros, deals.",
+      "Histórico que ancora a narrativa pública da rede.",
+    ],
+    connections: [
+      { arrow: "←", text: "Vem do EE Ativo, com transição automática de status." },
+      { arrow: "→", text: "Vira Mentor formal: caminho explícito que precisamos provocar mais." },
+      { arrow: "↔", text: "Co-protagonista do Day1 com Mentores e Embaixadores." },
+    ],
+  },
+  {
+    id: "mentor",
+    name: "Mentor",
+    count: 340,
+    rule: "1/4 da trilha",
+    tint: "navy",
+    quote: "Engajar com a causa, encontrar talento, ficar atualizado.",
+    intensity: { ic: 1, nb: 2, fl: 3 },
+    calendar: CAL_MENTORES,
+    inventory: {
+      ic: { items: [
+        { name: "Fireside Chats", role: "mentor convidado" },
+      ], summary: "Toques pontuais. O mentor entra quando o tema pede repertório executivo." },
+      nb: { items: [
+        { name: "Masterclasses", role: "palestrante" },
+        { name: "Gatherings de mentores", role: "anfitrião" },
+      ], summary: "Onde o mentor multiplica seu impacto além do 1:1." },
+      fl: { items: [
+        { name: "Encontro Anual", role: "centro" },
+        { name: "Day1", role: "reconhecimento público" },
+      ], summary: "Palco de reconhecimento e atração de novos mentores." },
+    },
+    received: [
+      "Senso de causa renovado: ver o efeito do tempo doado.",
+      "Encontro com talento qualificado para futuras conexões.",
+      "Repertório atualizado de scale-up sem precisar viver de novo.",
+      "Reconhecimento público pela contribuição.",
+    ],
+    given: [
+      "Tempo qualificado em mentorias estruturadas e fireside.",
+      "Abertura de portas: clientes, capital, parcerias.",
+      "Curadoria de talento: indicação de novos founders Candidate.",
+      "Cred do nome associado à narrativa pública.",
+    ],
+    connections: [
+      { arrow: "↔", text: "Convida Candidate por indicação: loop de pipeline." },
+      { arrow: "←", text: "Recebe alumni que vira mentor formal." },
+      { arrow: "→", text: "Conecta com Embaixador via Day1 e Encontro Anual." },
+    ],
+  },
+  {
+    id: "embaixador",
+    name: "Embaixador",
+    count: 40,
+    rule: "1/4 da trilha",
+    tint: "navy",
+    quote: "Visibilidade, pertencimento institucional, agenda alinhada.",
+    intensity: { ic: 1, nb: 1, fl: 3 },
+    calendar: CAL_EMBAIXADORES,
+    inventory: {
+      ic: { items: [
+        { name: "Convites curados", role: "convidado de honra" },
+      ], summary: "Toques pontuais e altamente personalizados." },
+      nb: { items: [
+        { name: "Side-Events seletivos", role: "convidado especial" },
+      ], summary: "Onde a presença vira capital político." },
+      fl: { items: [
+        { name: "Encontro Anual", role: "palco e chancela" },
+        { name: "Scale-Up Summit", role: "chancela" },
+        { name: "Day1", role: "celebração" },
+      ], summary: "É aqui que o capital relacional do Embaixador se traduz em narrativa pública." },
+    },
+    received: [
+      "Visibilidade institucional alinhada a uma causa de impacto.",
+      "Pertencimento a uma rede curada e relevante.",
+      "Acesso direto a founders e mentores top.",
+      "Agenda calibrada para o tempo escasso.",
+    ],
+    given: [
+      "Chancela pública para os Flagships da rede.",
+      "Mídia e exposição que atraem novos pares.",
+      "Capital político e relacional para destravar parcerias.",
+      "Capital financeiro quando o caso pede.",
+    ],
+    connections: [
+      { arrow: "→", text: "Atrai novos Mentores via prestígio institucional." },
+      { arrow: "↔", text: "Compartilha palco com Alumni de referência no Day1." },
+      { arrow: "→", text: "Materializa a expansão para Scale-Up via chancela do Summit." },
+    ],
+  },
+  {
+    id: "candidate",
+    name: "EE Candidate",
+    count: 34,
+    rule: "trilha de nutrição",
+    tint: "orange",
+    quote: "Conhecer a Endeavor por dentro antes da seleção.",
+    intensity: { ic: 0, nb: 1, fl: 2 },
+    calendar: CAL_SELECAO,
+    inventory: {
+      ic: { items: [], summary: "Não participa. A confiança ainda não foi construída para grupos curados." },
+      nb: { items: [
+        { name: "Side-Events", role: "convidado pontual" },
+        { name: "Gatherings", role: "convidado pontual" },
+      ], summary: "Convites cirúrgicos para experimentar a rede antes da seleção." },
+      fl: { items: [
+        { name: "Encontro Anual", role: "primeiro contato" },
+        { name: "Scale-Up Summit", role: "porta de entrada" },
+      ], summary: "É onde a Endeavor mostra do que é capaz para founders que ainda decidem." },
+    },
+    received: [
+      "Sinal de qualidade: o que a comunidade entrega antes do compromisso.",
+      "Contato com pares que validam a tese de scale-up.",
+      "Visão de carreira pós-seleção: o que vem depois do sim.",
+      "Network que já começa antes da formalização.",
+    ],
+    given: [
+      "Sinal de qualidade que valida o pipeline para a seleção.",
+      "Curadoria de mercado: quem está chegando e por quê.",
+    ],
+    connections: [
+      { arrow: "←", text: "Vem indicado por Mentor ou Embaixador." },
+      { arrow: "→", text: "Vira EE Ativo após seleção, herdando a trilha plena." },
+    ],
+  },
+];
+
+const MONTH_LABELS = ["JAN","FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"];
+const H1_MONTHS = [3, 4, 5, 6, 7];
+const H2_MONTHS = [8, 9, 10, 11, 12];
+
+// ============== GLOSSÁRIO DE TIPOS DE EVENTO ==============
+const GLOSSARIO = [
+  // INNER CIRCLE
+  {
+    id: "p2p",
+    layer: "ic",
+    name: "Peer to Peer Circles",
+    summary: "Pequenos grupos curados de founders no mesmo estágio para peer-learning estruturado.",
+    description: "Núcleo do Inner Circle. Grupos fechados, mesma maturidade, contrato de confiança. Cada encontro é facilitado em torno de desafios reais que os founders trazem da semana. O objetivo é destravar decisões de scale-up, não dar aula.",
+    cadencia: "Semanal a quinzenal",
+    tamanho: "8 a 12 founders",
+    duracao: "90 a 120 min",
+    examples: "Empreendedores 2026.1 (Mar a Jul) e 2026.2 (Ago a Dez); Seleção 2026.1 e 2026.2 (Ecosystem)"
+  },
+  {
+    id: "trilha",
+    layer: "ic",
+    name: "Trilha",
+    summary: "Jornada de conteúdo aplicado em um tema profundo, distribuída em múltiplos encontros.",
+    description: "Diferente da masterclass pontual: a trilha estrutura uma capacidade ao longo do tempo, com leitura, prática e revisão entre sessões. É como o Inner Circle constrói repertório técnico aplicável em escala.",
+    cadencia: "Encontros mensais por 4 a 6 meses",
+    tamanho: "12 a 25 founders",
+    duracao: "2h por sessão",
+    examples: "Trilha AI (Empreendedores, Abr a Dez)"
+  },
+  {
+    id: "fireside",
+    layer: "ic",
+    name: "Fireside Chat",
+    summary: "Conversa íntima com um líder convidado em formato pergunta e resposta.",
+    description: "Pequeno, off-the-record, sem palco. O convidado abre histórias e dilemas reais que não cabem em masterclass. Mentores de referência costumam liderar essas conversas para grupos seletos de EEs.",
+    cadencia: "Pontual, conforme convidado",
+    tamanho: "10 a 20 pessoas",
+    duracao: "90 min"
+  },
+  {
+    id: "jantar",
+    layer: "ic",
+    name: "Jantar por público",
+    summary: "Encontros relacionais por público, ambiente off-the-record, tese de afinidade.",
+    description: "Onde laços profundos se formam. Jantares de Embaixadores, EEs Outliers, Alumni. A pauta é leve, o vínculo é o produto. Anfitriões cuidam da curadoria da mesa.",
+    cadencia: "Trimestral por público",
+    tamanho: "15 a 30 pessoas",
+    duracao: "3 a 4 horas",
+    examples: "Jantar Embaixadores (Mai, Set), Jantar Embaixadores + EEs Outliers (Jul, Nov), Jantar de Encerramento (Dez)"
+  },
+  {
+    id: "mentoria",
+    layer: "ic",
+    name: "Mentoria estruturada",
+    summary: "Conexões individuais curadas para destravar um desafio principal.",
+    description: "Para Candidates do programa de Seleção, é o coração do ciclo: a Endeavor cura mentores específicos para o desafio crítico de cada founder, com checkpoints de progresso. Para EEs Ativos, acontece sob demanda em ciclos mais leves.",
+    cadencia: "1:1 mensal por 3 a 6 meses",
+    tamanho: "1 founder por mentor",
+    duracao: "60 a 90 min por sessão",
+    examples: "Conexões Individuais para Desafio Principal (Seleção, Mar a Jun)"
+  },
+  {
+    id: "selecao",
+    layer: "ic",
+    name: "Encontros de Seleção",
+    summary: "Marcos do ciclo de Seleção: kick-off, checkpoint, ISP, fechamento.",
+    description: "O ritual coletivo do programa de Seleção. Cada momento tem uma função clara: alinhar tese (Kick-off), avaliar progresso (Checkpoint), apresentar plano de scale-up (ISP), e decidir continuação ou encerramento.",
+    cadencia: "4 a 6 marcos por ciclo",
+    tamanho: "20 a 40 candidates",
+    duracao: "Meio dia a dia inteiro",
+    examples: "Convite e Kick-off (Mar), Checkpoint (Abr), Continuação ou Fim do Ciclo (Jun), ISP (Out, Dez), SEE Gathering (Ago)"
+  },
+  // NETWORK BUILDER
+  {
+    id: "masterclass",
+    layer: "nb",
+    name: "Masterclass",
+    summary: "Aula prática com líder de empresa de referência, formato palestra com Q&A.",
+    description: "Onde casos viram repertório aplicável. Líderes de PicPay, Meta, Mercado Livre, Pismo trazem decisões concretas de scale-up. EEs, Mentores, Embaixadores e Candidates participam juntos, multiplicando a sala.",
+    cadencia: "Mensal",
+    tamanho: "50 a 80 pessoas",
+    duracao: "2 horas",
+    examples: "Masterclass PicPay (Abr), Meta (Mai), Enter (Jun), Mercado Livre (Ago), Pismo (Out), Crew AI (Nov)"
+  },
+  {
+    id: "side",
+    layer: "nb",
+    name: "Side-Event",
+    summary: "Encontro paralelo a eventos âncora, com curadoria seletiva da rede.",
+    description: "A Endeavor não compete com o evento principal: se cola nele com um momento curado para a rede. BSV, LTF, Brazil Tech Week NYC viram pretextos para conversas mais valiosas em formato de mesa redonda ou jantar.",
+    cadencia: "Pontual conforme calendário externo",
+    tamanho: "30 a 60 pessoas",
+    duracao: "2 a 4 horas",
+    examples: "Side BSV (Abr), Side LTF (Abr), Side Brazil Tech Week NYC (Mai)"
+  },
+  {
+    id: "gathering",
+    layer: "nb",
+    name: "Gathering",
+    summary: "Encontros regionais ou temáticos que ativam a rede em diferentes capitais.",
+    description: "A interface da Comunidade com cada cidade. Gatherings regionais (Porto Alegre, BH, Rio, Florianópolis, Curitiba, Fortaleza) e temáticos (Mentores, Café da Manhã) constroem laços locais e mantêm a rede viva fora dos flagships.",
+    cadencia: "Mensal com rotação de cidades",
+    tamanho: "30 a 100 pessoas",
+    duracao: "4 horas",
+    examples: "Porto Alegre (Mar), BH (Abr), Rio (Jun), Florianópolis (Ago), Curitiba (Set), Fortaleza (Nov)"
+  },
+  {
+    id: "missao",
+    layer: "nb",
+    name: "Missão",
+    summary: "Viagem de imersão coletiva com agenda curada para expandir repertório global.",
+    description: "Imersão de alto investimento. A rede viaja junta, conversa com referências internacionais, volta com tese atualizada. Funciona porque combina conteúdo curado com 5 dias de convivência intensa.",
+    cadencia: "1 ou 2 missões por ano",
+    tamanho: "20 a 40 pessoas",
+    duracao: "4 a 7 dias",
+    examples: "Missão Amazônia (Mar), Missão China (Nov)"
+  },
+  // FLAGSHIP
+  {
+    id: "day1",
+    layer: "fl",
+    name: "Day 1",
+    summary: "Palco central da rede, celebração e narrativa pública dos founders.",
+    description: "O evento de maior alcance. Day 1 existe para alumni, embaixadores e mentores ocuparem o centro do palco e a rede inteira ver o que vieram a se tornar. Marca o ano e a narrativa pública.",
+    cadencia: "1 por semestre",
+    tamanho: "800 a 1.500 pessoas",
+    duracao: "Dia inteiro",
+    examples: "Day 1 (Ago)"
+  },
+  {
+    id: "summits",
+    layer: "fl",
+    name: "Summits e Encontros Anuais",
+    summary: "Cúpulas temáticas e encontros de programas que marcam o ciclo de cada público.",
+    description: "Eventos de chancela. SUP V Annual Gathering, EEE, EE Summit AI: cada um materializa a entrega de um programa específico. Combinam conteúdo de fronteira com convivência e reconhecimento dos pares.",
+    cadencia: "1 por ano por programa",
+    tamanho: "250 a 600 pessoas",
+    duracao: "1 a 2 dias",
+    examples: "SUP V Annual Gathering (Set), EEE (Set), EE Summit AI (Nov)"
+  },
+  {
+    id: "endeavor-week",
+    layer: "fl",
+    name: "Endeavor Week",
+    summary: "Semana programada que fecha o ciclo anual com múltiplos palcos coordenados.",
+    description: "Encerramento simbólico do ano da Comunidade. Concentra eventos de diferentes públicos em uma semana, com agenda que cruza Inner Circle, Network Builder e Flagship. É o palco onde a rede toda se reconhece junta.",
+    cadencia: "Anual, em dezembro",
+    tamanho: "1.000+ pessoas no acumulado",
+    duracao: "5 a 7 dias",
+    examples: "Endeavor Week (Dez)"
+  },
+];
+
+// ============== RENDER ==============
+const grid = document.getElementById('cards-grid');
+const detail = document.getElementById('detail');
+
+function renderCards() {
+  grid.innerHTML = PUBLICOS.map(p => `
+    <button class="card" data-id="${p.id}" data-tint="${p.tint}" aria-expanded="false">
+      <div class="top-bar"></div>
+      <div class="name">${p.name}</div>
+      <div class="count">${p.count.toLocaleString('pt-BR')} pessoas · ${p.rule}</div>
+      <div class="quote">${p.quote}</div>
+      <div class="intensity-row" aria-label="Intensidade por camada">
+        <div class="row"><span class="lbl">Inner Circle</span><span class="dots">${dots(p.intensity.ic, 'ic')}</span></div>
+        <div class="row"><span class="lbl">Network Builder</span><span class="dots">${dots(p.intensity.nb, 'nb')}</span></div>
+        <div class="row"><span class="lbl">Flagship</span><span class="dots">${dots(p.intensity.fl, 'fl')}</span></div>
+      </div>
+      <span class="cta">VER ANATOMIA →</span>
+    </button>
+  `).join('');
+  grid.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => openDetail(card.dataset.id, card));
+  });
+}
+
+function dots(level, layer) {
+  if (level === 0) return `<span class="dot empty" title="não participa"></span>`;
+  let html = '';
+  for (let i = 0; i < 3; i++) {
+    if (i < level) html += `<span class="dot ${layer}"></span>`;
+    else html += `<span class="dot empty"></span>`;
+  }
+  return html;
+}
+
+function openDetail(id, cardEl) {
+  const p = PUBLICOS.find(x => x.id === id);
+  if (!p) return;
+
+  // toggle if same card clicked
+  const isAlreadyOpen = detail.classList.contains('is-open') && detail.dataset.id === id;
+  if (isAlreadyOpen) {
+    closeDetail();
+    return;
+  }
+
+  // mark active card
+  document.querySelectorAll('.card').forEach(c => {
+    c.classList.toggle('is-active', c.dataset.id === id);
+    c.setAttribute('aria-expanded', c.dataset.id === id ? 'true' : 'false');
+  });
+
+  detail.dataset.id = id;
+  detail.classList.add('is-open');
+  detail.innerHTML = renderDetail(p);
+
+  // bind close
+  detail.querySelector('.detail-close').addEventListener('click', closeDetail);
+
+  // scroll into view (smooth)
+  setTimeout(() => detail.scrollIntoView({ behavior: 'smooth', block: 'start' }), 10);
+}
+
+function closeDetail() {
+  detail.classList.remove('is-open');
+  detail.innerHTML = '';
+  document.querySelectorAll('.card').forEach(c => {
+    c.classList.remove('is-active');
+    c.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function renderDetail(p) {
+  const cal = p.calendar;
+  const totalEvents =
+    cal.h1.events.length + cal.h1.spans.length +
+    cal.h2.events.length + cal.h2.spans.length;
+  return `
+    <div class="detail-head">
+      <div>
+        <div class="section-eyebrow">${p.tint === 'teal' ? 'CORE DA COMUNIDADE' : p.tint === 'navy' ? 'MULTIPLICADOR' : 'NUTRIÇÃO'}</div>
+        <h2 class="ttl">${p.name}</h2>
+        <div class="meta">${p.count.toLocaleString('pt-BR')} pessoas · ${p.rule} · ${totalEvents} momentos no ano</div>
+        <p class="quote-large">${p.quote}</p>
+      </div>
+      <button class="detail-close" aria-label="Fechar">FECHAR ✕</button>
+    </div>
+
+    <div class="cal-section">
+      <div class="section-eyebrow">CALENDÁRIO 2026</div>
+      ${renderCalBlock(cal.h1, H1_MONTHS)}
+      ${renderCalBlock(cal.h2, H2_MONTHS)}
+    </div>
+
+    <div class="section-eyebrow">INVENTÁRIO POR CAMADA</div>
+    <div class="inventory">
+      ${renderInvCard('ic', 'INNER CIRCLE', p.inventory.ic, p.intensity.ic)}
+      ${renderInvCard('nb', 'NETWORK BUILDER', p.inventory.nb, p.intensity.nb)}
+      ${renderInvCard('fl', 'FLAGSHIP', p.inventory.fl, p.intensity.fl)}
+    </div>
+  `;
+}
+
+function renderCalBlock(block, months) {
+  const totalCount = block.events.length + block.spans.length;
+  if (totalCount === 0) {
+    return `
+      <div class="cal-block">
+        <div class="cal-block-head">
+          <div class="cal-block-title">${block.label}</div>
+          <div class="cal-block-meta">sem agenda definida</div>
+        </div>
+        <div class="cal-block-empty">Sem eventos previstos para este público no semestre.</div>
+      </div>
+    `;
+  }
+  const spansHtml = block.spans.length
+    ? `<div class="cal-spans">${block.spans.map(s => `
+        <div class="cal-span ${s.layer}" aria-label="${s.name}, de ${MONTH_LABELS[s.from-1]} a ${MONTH_LABELS[s.to-1]}">
+          <span class="span-dot"></span>
+          <span class="span-name">${s.name}</span>
+          <span class="span-range">${MONTH_LABELS[s.from-1]} → ${MONTH_LABELS[s.to-1]}</span>
+        </div>
+      `).join('')}</div>`
+    : '';
+  const monthsHtml = months.map(m => {
+    const evs = block.events.filter(e => e.m === m);
+    return `
+      <div class="cal-month">
+        <div class="month-name">${MONTH_LABELS[m-1]}</div>
+        ${evs.length
+          ? evs.map(e => `<div class="cal-event ${e.layer}">${e.name}</div>`).join('')
+          : `<div class="cal-empty-month">·</div>`
+        }
+      </div>
+    `;
+  }).join('');
+  return `
+    <div class="cal-block">
+      <div class="cal-block-head">
+        <div class="cal-block-title">${block.label}</div>
+        <div class="cal-block-meta">${block.events.length} pontuais · ${block.spans.length} contínuos</div>
+      </div>
+      ${spansHtml}
+      <div class="cal-grid">${monthsHtml}</div>
+    </div>
+  `;
+}
+
+function renderInvCard(layer, label, data, level) {
+  const intensityDots = (() => {
+    if (level === 0) return `<div class="intensity"><span class="d empty"></span></div>`;
+    let html = '<div class="intensity">';
+    for (let i = 0; i < 3; i++) {
+      html += `<span class="d ${i < level ? 'on' : 'off'}"></span>`;
+    }
+    html += '</div>';
+    return html;
+  })();
+  const items = data.items && data.items.length
+    ? `<ul>${data.items.map(it => `<li><span>${it.name}</span><span class="role">${it.role}</span></li>`).join('')}</ul>`
+    : '';
+  return `
+    <div class="inv-card" data-layer="${layer}">
+      <div class="layer-label"><span class="swatch"></span> ${label}</div>
+      ${intensityDots}
+      ${items}
+      <div class="summary">${data.summary}</div>
+    </div>
+  `;
+}
+
+// ============== GLOSSÁRIO ==============
+const glossGrid = document.getElementById('glossary-grid');
+const glossTabs = document.getElementById('glossary-tabs');
+let glossFilter = 'all';
+
+function renderGlossary() {
+  const items = glossFilter === 'all'
+    ? GLOSSARIO
+    : GLOSSARIO.filter(g => g.layer === glossFilter);
+  glossGrid.innerHTML = items.map(g => `
+    <button class="gloss-item" data-id="${g.id}" data-layer="${g.layer}" aria-expanded="false">
+      <span class="gloss-bar"></span>
+      <div class="gloss-row">
+        <span class="gloss-name">${g.name}</span>
+        <span class="gloss-meta">${g.layer === 'ic' ? 'INNER CIRCLE' : g.layer === 'nb' ? 'NETWORK BUILDER' : 'FLAGSHIP'}</span>
+      </div>
+      <div class="gloss-summary">${g.summary}</div>
+      <div class="gloss-toggle">VER DETALHES</div>
+      <div class="gloss-detail">
+        <p>${g.description}</p>
+        <div class="gloss-stats">
+          <div class="gloss-stat"><span class="lbl">Recorrência</span><span class="val">${g.cadencia}</span></div>
+          <div class="gloss-stat"><span class="lbl">Tamanho típico</span><span class="val">${g.tamanho}</span></div>
+          <div class="gloss-stat"><span class="lbl">Duração</span><span class="val">${g.duracao}</span></div>
+        </div>
+        ${g.examples ? `<div class="gloss-examples">No calendário 2026: ${g.examples}.</div>` : ''}
+      </div>
+    </button>
+  `).join('');
+  glossGrid.querySelectorAll('.gloss-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('is-open');
+      item.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+}
+
+glossTabs.querySelectorAll('.gloss-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    glossTabs.querySelectorAll('.gloss-tab').forEach(t => t.classList.remove('is-active'));
+    tab.classList.add('is-active');
+    glossFilter = tab.dataset.filter;
+    renderGlossary();
+  });
+});
+
+// ============== CALENDÁRIO CONSOLIDADO ==============
+const consModal = document.getElementById('cons-modal');
+const consBody = document.getElementById('cons-body');
+const consClose = document.getElementById('cons-close');
+const openConsBtn = document.getElementById('open-consolidated');
+let consLayerFilter = 'all';
+let consPublicFilter = 'all';
+
+// Build consolidated event list (dedup by name+m, aggregate publics)
+function buildConsolidated() {
+  // Event key = layer + month + name
+  const map = new Map();
+  PUBLICOS.forEach(p => {
+    [p.calendar.h1, p.calendar.h2].forEach(block => {
+      block.events.forEach(e => {
+        const key = `${e.layer}|${e.m}|${e.name}`;
+        if (!map.has(key)) {
+          map.set(key, { kind: 'event', layer: e.layer, m: e.m, name: e.name, publics: new Set() });
+        }
+        map.get(key).publics.add(p.id);
+      });
+      block.spans.forEach(s => {
+        const key = `span|${s.layer}|${s.from}|${s.to}|${s.name}`;
+        if (!map.has(key)) {
+          map.set(key, { kind: 'span', layer: s.layer, from: s.from, to: s.to, name: s.name, publics: new Set() });
+        }
+        map.get(key).publics.add(p.id);
+      });
+    });
+  });
+  return Array.from(map.values());
+}
+
+const PUBLIC_LABELS = {
+  'ee-ativo': 'EE Ativo',
+  'ee-alumni': 'EE Alumni',
+  'mentor': 'Mentor',
+  'embaixador': 'Embaixador',
+  'candidate': 'Candidate',
+};
+
+const ALL_CONS = buildConsolidated();
+
+function consMatchesFilters(item) {
+  if (consLayerFilter !== 'all' && item.layer !== consLayerFilter) return false;
+  if (consPublicFilter !== 'all' && !item.publics.has(consPublicFilter)) return false;
+  return true;
+}
+
+function renderConsBlock(label, months) {
+  const filtered = ALL_CONS.filter(consMatchesFilters);
+  // For events, place by month. For spans, render in every month they touch.
+  const monthEvents = months.map(m => {
+    const evs = filtered.filter(e => e.kind === 'event' && e.m === m);
+    const sps = filtered.filter(e => e.kind === 'span' && e.from <= m && e.to >= m);
+    return { m, evs, sps };
+  });
+  const totalInBlock = monthEvents.reduce((acc, mm) => acc + mm.evs.length, 0)
+    + filtered.filter(e => e.kind === 'span' && months.includes(e.from)).length;
+  if (totalInBlock === 0) {
+    return `
+      <div class="cons-block">
+        <div class="cons-block-title">${label}</div>
+        <div class="cons-block-empty">Sem eventos nos filtros selecionados.</div>
+      </div>
+    `;
+  }
+  return `
+    <div class="cons-block">
+      <div class="cons-block-title">${label}</div>
+      <div class="cons-grid">
+        ${monthEvents.map(({m, evs, sps}) => `
+          <div class="cons-month">
+            <div class="month-name">${MONTH_LABELS[m-1]}</div>
+            ${[...sps, ...evs].length === 0
+              ? '<div class="cons-empty-month">·</div>'
+              : [...sps.map(s => renderConsCard(s, m === s.from)), ...evs.map(e => renderConsCard(e, true))].join('')
+            }
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderConsCard(item, showName) {
+  const isSpan = item.kind === 'span';
+  const publicsHtml = `<div class="ev-publics">${Array.from(item.publics).sort().map(pid => `<span class="ev-pub">${PUBLIC_LABELS[pid]}</span>`).join('')}</div>`;
+  const nameHtml = showName
+    ? `<div class="ev-name">${item.name}${isSpan ? ` (${MONTH_LABELS[item.from-1]} → ${MONTH_LABELS[item.to-1]})` : ''}</div>`
+    : `<div class="ev-name" style="opacity:.5">${item.name} (continuação)</div>`;
+  return `
+    <div class="cons-event ${item.layer}${isSpan ? ' is-span' : ''}">
+      ${nameHtml}
+      ${showName ? publicsHtml : ''}
+    </div>
+  `;
+}
+
+function renderConsBody() {
+  consBody.innerHTML = `
+    ${renderConsBlock('2026.1 · MAR A JUL', H1_MONTHS)}
+    ${renderConsBlock('2026.2 · AGO A DEZ', H2_MONTHS)}
+  `;
+}
+
+function openConsModal() {
+  renderConsBody();
+  consModal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+function closeConsModal() {
+  consModal.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+openConsBtn.addEventListener('click', openConsModal);
+consClose.addEventListener('click', closeConsModal);
+consModal.addEventListener('click', e => {
+  if (e.target === consModal) closeConsModal();
+});
+
+// Filters: layer
+consModal.querySelectorAll('[data-layer-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    consModal.querySelectorAll('[data-layer-filter]').forEach(b => {
+      b.classList.remove('is-active', 'ic', 'nb', 'fl');
+    });
+    btn.classList.add('is-active');
+    const f = btn.dataset.layerFilter;
+    if (f !== 'all') btn.classList.add(f);
+    consLayerFilter = f;
+    renderConsBody();
+  });
+});
+// Filters: public
+consModal.querySelectorAll('[data-public-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    consModal.querySelectorAll('[data-public-filter]').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    consPublicFilter = btn.dataset.publicFilter;
+    renderConsBody();
+  });
+});
+
+// init
+renderCards();
+renderGlossary();
+
+// keyboard: ESC closes detail / modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (consModal.classList.contains('is-open')) closeConsModal();
+    else if (detail.classList.contains('is-open')) closeDetail();
+  }
+});
+</script>
+</body>
+</html>
